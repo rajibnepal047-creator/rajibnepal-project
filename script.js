@@ -286,7 +286,7 @@ async function loadTravelNews() {
     try {
 
         const response = await fetch(
-            "https://newsapi.org/v2/everything?q=travel&sortBy=publishedAt&apiKey=f5957bb741944d73aa9c245436487368"
+            "https://gnews.io/api/v4/search?q=travel&lang=en&max=10&apikey=c660167b88e57ec45e3d032f5d48588f"
         );
 
         if (!response.ok) {
@@ -297,16 +297,12 @@ async function loadTravelNews() {
 
         console.log(data);
 
-        // Check if NewsAPI returned an error
-        if (data.status !== "ok") {
-            throw new Error(data.message || "Unable to load news.");
-        }
-
         newsArticles = data.articles || [];
 
         displayNews(newsArticles);
 
-    } catch (error) {
+
+    } catch(error){
 
         newsContainer.innerHTML = `
             <div class="news-error">
