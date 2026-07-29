@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DestinyTours</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="#">
+<i class="bi bi-airplane-fill"></i>
+DestinyTours
+</a>
+
+<button
+class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav ms-auto">
+
+<li class="nav-item">
+<a class="nav-link route" data-page="home">Home</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link route" data-page="news">
+Travel News
+</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link route" data-page="tours">Tours</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link route" data-page="weather">Weather</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link route" data-page="currency">Currency</a>
+</li>
+
+<li class="nav-item">
+<a class="nav-link route" data-page="contact">Contact</a>
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- ========================= HOME ========================= -->
+
+<section class="page active-page" id="home">
+
+<header class="hero">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-lg-6">
+
+<h1 class="display-3 fw-bold">
+
+Explore The World
+
+</h1>
+
+<p class="lead">
+
+Discover amazing countries, weather, attractions,
+currency exchange and unforgettable tours.
+
+</p>
+
+<button
+class="btn btn-primary btn-lg route"
+data-page="news">
+
+Explore News
+
+</button>
+
+</div>
+
+<div class="col-lg-6 text-center">
+
+<img
+<img
+src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600"
+class="img-fluid rounded shadow"
+alt="Travel">
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="container py-5">
+
+<h2 class="text-center mb-4">
+
+Popular Tours
+
+</h2>
+
+<div class="tour-preview">
+
+<div class="preview-card">
+
+<img src="https://picsum.photos/400?1">
+
+<h4>Paris</h4>
+
+</div>
+
+<div class="preview-card">
+
+<img src="https://picsum.photos/400?2">
+
+<h4>Japan</h4>
+
+</div>
+
+<div class="preview-card">
+
+<img src="https://picsum.photos/400?3">
+
+<h4>Bali</h4>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="container pb-5">
+
+<div class="quote-box">
+
+<h3>Traveler Quote</h3>
+
+<p id="quote">
+
+Loading inspiration...
+
+</p>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- ========================= Travel News ========================= -->
+
+<!-- ========================= TRAVEL NEWS ========================= -->
+
+<section class="page" id="news">
+
+
+<div class="container py-5">
+
+
+<h2 class="text-center mb-5">
+
+Latest Travel News
+
+</h2>
+
+
+
+<div class="row justify-content-center mb-4">
+
+
+<div class="col-lg-6">
+
+
+<input
+
+id="newsSearch"
+
+class="form-control"
+
+placeholder="Search travel news...">
+
+
+</div>
+
+
+</div>
+
+
+
+<div id="travelNews" class="news-grid">
+
+
+<div class="loading-text">
+
+Loading travel news...
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+<!-- ========================= TOURS ========================= -->
+
+<section class="page" id="tours">
+
+<div class="container py-5">
+
+<h2 class="text-center mb-5">
+
+Featured Tours
+
+</h2>
+
+<div id="tourGrid" class="tour-grid">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= WEATHER ========================= -->
+
+<section class="page" id="weather">
+
+<div class="container py-5">
+
+<h2 class="text-center">
+
+Weather
+
+</h2>
+
+<div class="row justify-content-center mt-4">
+
+<div class="col-lg-5">
+
+<input
+id="cityInput"
+class="form-control"
+placeholder="Enter City">
+
+</div>
+
+<div class="col-lg-2">
+
+<button
+id="weatherBtn"
+class="btn btn-primary w-100">
+
+Search
+
+</button>
+
+</div>
+
+</div>
+
+<div
+id="weatherResult"
+class="mt-5">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= ATTRACTIONS ========================= -->
+
+<section class="page" id="attractions">
+
+<div class="container py-5">
+
+<h2 class="text-center">
+
+Top Attractions
+
+</h2>
+
+<div class="row justify-content-center mt-4">
+
+<div class="col-lg-6">
+
+<input
+id="placeInput"
+class="form-control"
+placeholder="Enter City">
+
+</div>
+
+<div class="col-lg-2">
+
+<button
+id="placeBtn"
+class="btn btn-success w-100">
+
+Find
+
+</button>
+
+</div>
+
+</div>
+
+<div
+id="placesResult"
+class="country-grid mt-5">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= CURRENCY ========================= -->
+
+<section class="page" id="currency">
+
+<div class="container py-5">
+
+<h2 class="text-center">
+
+Currency Converter
+
+</h2>
+
+<div class="row justify-content-center mt-4">
+
+<div class="col-md-3">
+
+<input
+id="amount"
+class="form-control"
+type="number"
+placeholder="Amount">
+
+</div>
+
+<div class="col-md-2">
+
+<input
+id="from"
+class="form-control"
+placeholder="USD">
+
+</div>
+
+<div class="col-md-2">
+
+<input
+id="to"
+class="form-control"
+placeholder="EUR">
+
+</div>
+
+<div class="col-md-2">
+
+<button
+id="convertBtn"
+class="btn btn-warning w-100">
+
+Convert
+
+</button>
+
+</div>
+
+</div>
+
+<h3
+class="text-center mt-5"
+id="conversionResult">
+
+</h3>
+
+</div>
+
+</section>
+
+<!-- ========================= CONTACT ========================= -->
+
+<section class="page" id="contact">
+
+<div class="container py-5">
+
+<h2 class="text-center mb-4">
+
+Contact Us
+
+</h2>
+
+<form
+id="contactForm"
+class="mx-auto contact-form">
+
+<div class="mb-3">
+
+<input
+id="name"
+class="form-control"
+placeholder="Full Name">
+
+</div>
+
+<div class="mb-3">
+
+<input
+id="email"
+class="form-control"
+placeholder="Email">
+
+</div>
+
+<div class="mb-3">
+
+<textarea
+id="message"
+class="form-control"
+rows="6"
+placeholder="Message">
+
+</textarea>
+
+</div>
+
+<button
+class="btn btn-primary w-100">
+
+Send Message
+
+</button>
+
+<div
+id="formMessage"
+class="mt-3">
+
+</div>
+
+</form>
+
+</div>
+
+</section>
+
+<!-- ========================= FOOTER ========================= -->
+
+<footer class="bg-dark text-white text-center py-4">
+
+<p>
+
+© 2026 DestinyTours
+
+
+</p>
+
+</footer>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

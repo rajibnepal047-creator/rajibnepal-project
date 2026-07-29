@@ -1,0 +1,1873 @@
+/* ===================================================
+   GLOBAL STYLES
+=================================================== */
+
+body {
+    background: var(--body-bg);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    overflow-x: hidden;
+}
+
+.page {
+    display: none;
+    min-height: 100vh;
+    animation: fadeIn .5s ease;
+}
+
+.active-page {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    padding: 70px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-color);
+    font-weight: var(--fw-bold);
+}
+
+p {
+    color: var(--muted-text);
+    margin-bottom: 1rem;
+}
+
+img {
+    transition: var(--transition);
+}
+
+/* ===================================================
+   NAVBAR
+=================================================== */
+
+.navbar {
+    background: rgba(17, 24, 39, .95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-md);
+    padding: .8rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    letter-spacing: .5px;
+}
+
+.navbar-brand i {
+    color: var(--accent);
+    margin-right: 8px;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 18px;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+.nav-link:hover {
+    color: var(--accent) !important;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: .3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ===================================================
+   HERO SECTION
+=================================================== */
+
+.hero {
+    min-height: var(--hero-height);
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(var(--hero-overlay), var(--hero-overlay)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80");
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.hero h1 {
+    color: white;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: rgba(255, 255, 255, .9);
+    font-size: 1.15rem;
+    margin-bottom: 30px;
+}
+
+.hero img {
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xl);
+}
+
+.hero img:hover {
+    transform: scale(1.04);
+}
+
+/* ===================================================
+   BUTTONS
+=================================================== */
+
+.btn {
+    border-radius: var(--radius-round);
+    transition: var(--transition);
+    font-weight: 600;
+    padding: 12px 28px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-success:hover,
+.btn-warning:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ===================================================
+   SECTION TITLES
+=================================================== */
+
+h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 45px;
+}
+
+h2::after {
+    content: "";
+    width: 70px;
+    height: 4px;
+    background: var(--primary);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 10px;
+}
+
+/* ===================================================
+   HOME TOUR PREVIEW
+=================================================== */
+
+.tour-preview {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.preview-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    width: 320px;
+    transition: var(--transition);
+}
+
+.preview-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.preview-card h4 {
+    text-align: center;
+    padding: 18px;
+}
+
+.preview-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.preview-card:hover img {
+    transform: scale(1.08);
+}
+
+/* ===================================================
+   QUOTE SECTION
+=================================================== */
+
+.quote-box {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+}
+
+.quote-box h3 {
+    margin-bottom: 20px;
+}
+
+.quote-box p {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+/* ===================================================
+   LOADING & ERROR STATES
+=================================================== */
+
+.loading {
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 40px;
+}
+
+.error {
+    text-align: center;
+    color: var(--danger);
+    font-weight: bold;
+    padding: 40px;
+}
+
+/* ===================================================
+   CUSTOM SCROLLBAR
+=================================================== */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-200);
+}
+/* ===================================================
+   TRAVEL NEWS SECTION
+=================================================== */
+
+
+.news-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:30px;
+
+}
+
+
+
+.news-card{
+
+    background:white;
+
+    border-radius:var(--radius-lg);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition);
+
+}
+
+
+
+.news-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+
+
+.news-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+
+
+.news-content{
+
+    padding:25px;
+
+}
+
+
+
+.news-content h4{
+
+    margin-bottom:15px;
+
+}
+
+
+
+.news-category{
+
+    display:inline-block;
+
+    background:var(--primary);
+
+    color:white;
+
+    padding:6px 15px;
+
+    border-radius:50px;
+
+    font-size:.8rem;
+
+}
+
+
+
+.news-error{
+
+    background:#f8d7da;
+
+    color:#842029;
+
+    padding:30px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+}
+
+
+
+.loading-text{
+
+    text-align:center;
+
+    padding:40px;
+
+}
+/* ===================================================
+   TOUR GRID
+=================================================== */
+
+.tour-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:35px;
+
+}
+
+.tour-card{
+
+    background:white;
+
+    border-radius:var(--radius-lg);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition);
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.tour-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.tour-card img{
+
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    transition:var(--transition);
+
+}
+
+.tour-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.tour-content{
+
+    padding:25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+
+}
+
+.tour-content h3{
+
+    margin-bottom:12px;
+
+}
+
+.tour-content p{
+
+    flex:1;
+
+}
+
+.tour-price{
+
+    color:var(--success);
+
+    font-size:1.4rem;
+
+    font-weight:bold;
+
+    margin:15px 0;
+
+}
+
+.tour-content button{
+
+    margin-top:auto;
+
+}
+
+/* ===================================================
+   UNIVERSAL CARD
+=================================================== */
+
+.card-hover{
+
+    transition:var(--transition);
+
+}
+
+.card-hover:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+/* ===================================================
+   API CARDS
+=================================================== */
+
+.api-card{
+
+    background:white;
+
+    border-radius:var(--radius-lg);
+
+    padding:25px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition);
+
+}
+
+.api-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+.api-card i{
+
+    font-size:3rem;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.api-card h4{
+
+    margin-bottom:15px;
+
+}
+
+.api-card p{
+
+    margin-bottom:8px;
+
+}
+
+/* ===================================================
+   FLEX UTILITIES
+=================================================== */
+
+.flex-between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.flex-center{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.flex-column{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* ===================================================
+   BADGES
+=================================================== */
+
+.badge-custom{
+
+    display:inline-block;
+
+    padding:8px 15px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+}
+
+.badge-success{
+
+    background:var(--success);
+
+}
+
+.badge-warning{
+
+    background:var(--warning);
+
+}
+
+.badge-danger{
+
+    background:var(--danger);
+
+}
+
+/* ===================================================
+   IMAGE EFFECTS
+=================================================== */
+
+.zoom-img{
+
+    overflow:hidden;
+
+}
+
+.zoom-img img{
+
+    transition:.5s;
+
+}
+
+.zoom-img:hover img{
+
+    transform:scale(1.12);
+
+}
+
+/* ===================================================
+   EMPTY STATE
+=================================================== */
+
+.empty-state{
+
+    text-align:center;
+
+    padding:70px 20px;
+
+    color:var(--gray-600);
+
+}
+
+.empty-state i{
+
+    font-size:4rem;
+
+    color:var(--gray-400);
+
+    margin-bottom:20px;
+
+}
+
+.empty-state h3{
+
+    margin-bottom:15px;
+
+}
+
+/* ===================================================
+   LOADER
+=================================================== */
+
+.loader{
+
+    width:55px;
+
+    height:55px;
+
+    border:6px solid var(--gray-300);
+
+    border-top:6px solid var(--primary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin:50px auto;
+
+}
+
+@keyframes spin{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ===================================================
+   CARD FADE ANIMATION
+=================================================== */
+
+.country-card,
+.tour-card,
+.api-card{
+
+    animation:cardFade .5s ease;
+
+}
+
+@keyframes cardFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ===================================================
+   WEATHER SECTION
+=================================================== */
+
+#weatherResult{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:250px;
+
+}
+
+
+.weather-card{
+
+    background:white;
+
+    width:350px;
+
+    padding:35px;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+    text-align:center;
+
+    animation:cardFade .5s ease;
+
+}
+
+
+.weather-card img{
+
+    width:90px;
+
+    margin:20px auto;
+
+}
+
+
+.weather-card h3{
+
+    font-size:2rem;
+
+}
+
+
+.weather-temp{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    color:var(--primary);
+
+}
+
+
+.weather-info{
+
+    display:flex;
+
+    justify-content:space-around;
+
+    margin-top:25px;
+
+}
+
+
+.weather-info div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:5px;
+
+}
+
+
+.weather-info i{
+
+    font-size:1.5rem;
+
+    color:var(--secondary);
+
+}
+
+
+/* ===================================================
+   WEATHER SEARCH INPUT
+=================================================== */
+
+
+#cityInput,
+#placeInput{
+
+    height:55px;
+
+    border-radius:50px;
+
+    border:1px solid var(--gray-300);
+
+    padding-left:25px;
+
+}
+
+
+#cityInput:focus,
+#placeInput:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 10px rgba(13,110,253,.2);
+
+}
+
+
+/* ===================================================
+   ATTRACTIONS SECTION
+=================================================== */
+
+
+#placesResult{
+
+    margin-top:40px;
+
+}
+
+
+.place-card{
+
+    background:white;
+
+    border-radius:var(--radius-lg);
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition);
+
+}
+
+
+.place-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-xl);
+
+}
+
+
+.place-card img{
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+}
+
+
+.place-content{
+
+    padding:25px;
+
+}
+
+
+.place-content h4{
+
+    margin-bottom:15px;
+
+}
+
+
+.place-rating{
+
+    color:var(--warning);
+
+    font-weight:bold;
+
+}
+
+
+
+/* ===================================================
+   CURRENCY CONVERTER
+=================================================== */
+
+
+#currency{
+
+    min-height:70vh;
+
+}
+
+
+#currency input{
+
+    height:55px;
+
+    border-radius:50px;
+
+    padding-left:20px;
+
+    border:1px solid var(--gray-300);
+
+}
+
+
+#currency input:focus{
+
+    border-color:var(--primary);
+
+}
+
+
+#convertBtn{
+
+    border-radius:50px;
+
+    font-weight:600;
+
+}
+
+
+#conversionResult{
+
+    color:var(--success);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+
+
+/* ===================================================
+   CONTACT FORM
+=================================================== */
+
+
+.contact-form{
+
+    max-width:650px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+
+.contact-form input,
+.contact-form textarea{
+
+    border-radius:12px;
+
+    padding:15px;
+
+    border:1px solid var(--gray-300);
+
+    transition:var(--transition);
+
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 .2rem rgba(13,110,253,.15);
+
+}
+
+
+.contact-form textarea{
+
+    resize:none;
+
+}
+
+
+.contact-form button{
+
+    height:55px;
+
+}
+
+
+
+/* SUCCESS MESSAGE */
+
+.success-message{
+
+    background:#d1e7dd;
+
+    color:#0f5132;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+
+
+/* ERROR MESSAGE */
+
+.error-message{
+
+    background:#f8d7da;
+
+    color:#842029;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-weight:600;
+
+}
+
+
+
+/* ===================================================
+   FORM VALIDATION STATES
+=================================================== */
+
+
+.input-error{
+
+    border:2px solid var(--danger)!important;
+
+}
+
+
+.input-success{
+
+    border:2px solid var(--success)!important;
+
+}
+
+
+
+/* ===================================================
+   FOOTER
+=================================================== */
+
+
+footer{
+
+    background:
+
+    linear-gradient(
+    135deg,
+    var(--dark),
+    #000
+    );
+
+    padding:40px 0;
+
+}
+
+
+footer p{
+
+    color:white;
+
+    margin:0;
+
+}
+
+
+footer a{
+
+    color:var(--accent);
+
+    transition:var(--transition);
+
+}
+
+
+footer a:hover{
+
+    color:white;
+
+}
+
+
+
+/* ===================================================
+   SOCIAL BUTTONS
+=================================================== */
+
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+
+.social-links a{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:var(--dark);
+
+    transition:var(--transition);
+
+}
+
+
+.social-links a:hover{
+
+    transform:translateY(-5px);
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+
+/* ===================================================
+   API FALLBACK BOX
+=================================================== */
+
+
+.fallback-box{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--shadow-md);
+
+    text-align:center;
+
+}
+
+
+.fallback-box i{
+
+    font-size:3rem;
+
+    color:var(--danger);
+
+    margin-bottom:15px;
+
+}
+
+
+/* ===================================================
+   RESPONSIVE TABLET SUPPORT
+=================================================== */
+
+
+@media(max-width:992px){
+
+
+.hero{
+
+    text-align:center;
+
+}
+
+
+.hero img{
+
+    margin-top:40px;
+
+}
+
+
+.nav-link{
+
+    margin-left:0;
+
+    padding:12px;
+
+}
+
+
+.weather-info{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+
+}
+/* ===================================================
+   RESPONSIVE DESIGN
+=================================================== */
+
+
+/* ---------- LARGE DESKTOP ---------- */
+
+@media (min-width:1200px){
+
+    .hero h1{
+
+        max-width:650px;
+
+    }
+
+
+    .country-grid{
+
+        grid-template-columns:
+        repeat(4,1fr);
+
+    }
+
+
+    .tour-grid{
+
+        grid-template-columns:
+        repeat(3,1fr);
+
+    }
+
+}
+
+
+
+/* ===================================================
+   TABLET DEVICES
+=================================================== */
+
+@media(max-width:992px){
+
+
+    section{
+
+        padding:50px 0;
+
+    }
+
+
+    .hero{
+
+        min-height:auto;
+
+        padding:100px 0;
+
+    }
+
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+
+    .hero p{
+
+        font-size:1rem;
+
+    }
+
+
+    .tour-preview{
+
+        gap:20px;
+
+    }
+
+
+    .preview-card{
+
+        width:280px;
+
+    }
+
+
+    .country-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+
+    .tour-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+
+    .contact-form{
+
+        padding:30px;
+
+    }
+
+
+}
+
+
+
+/* ===================================================
+   MOBILE DEVICES
+=================================================== */
+
+@media(max-width:576px){
+
+
+    body{
+
+        font-size:.95rem;
+
+    }
+
+
+    section{
+
+        padding:40px 0;
+
+    }
+
+
+    /* NAVBAR */
+
+
+    .navbar-brand{
+
+        font-size:1.3rem;
+
+    }
+
+
+    .navbar-toggler{
+
+        border:none;
+
+    }
+
+
+    .navbar-toggler:focus{
+
+        box-shadow:none;
+
+    }
+
+
+    .nav-link{
+
+        text-align:center;
+
+        padding:15px;
+
+    }
+
+
+
+    /* HERO */
+
+
+    .hero{
+
+        padding:70px 0;
+
+        text-align:center;
+
+    }
+
+
+    .hero h1{
+
+        font-size:2.3rem;
+
+    }
+
+
+    .hero p{
+
+        font-size:.95rem;
+
+    }
+
+
+    .hero button{
+
+        width:100%;
+
+    }
+
+
+    .hero img{
+
+        margin-top:30px;
+
+    }
+
+
+
+    /* HEADINGS */
+
+
+    h2{
+
+        font-size:1.8rem;
+
+    }
+
+
+
+    /* GRIDS */
+
+
+    .country-grid,
+    .tour-grid{
+
+        grid-template-columns:
+        1fr;
+
+        gap:20px;
+
+    }
+
+
+    .tour-preview{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+    .preview-card{
+
+        width:100%;
+
+    }
+
+
+
+    /* WEATHER */
+
+
+    .weather-card{
+
+        width:100%;
+
+        padding:25px;
+
+    }
+
+
+    .weather-temp{
+
+        font-size:2.5rem;
+
+    }
+
+
+
+    /* FORMS */
+
+
+    .contact-form{
+
+        padding:20px;
+
+    }
+
+
+    .contact-form button{
+
+        width:100%;
+
+    }
+
+
+
+    /* CURRENCY */
+
+
+    #currency .row > div{
+
+        margin-bottom:15px;
+
+    }
+
+
+}
+
+
+
+/* ===================================================
+   SMALL MOBILE DEVICES
+=================================================== */
+
+@media(max-width:375px){
+
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+
+    .hero p{
+
+        font-size:.9rem;
+
+    }
+
+
+    .btn{
+
+        padding:10px 20px;
+
+    }
+
+
+    .quote-box{
+
+        padding:25px;
+
+    }
+
+
+}
+
+
+
+/* ===================================================
+   ACCESSIBILITY
+=================================================== */
+
+
+button:focus,
+input:focus,
+textarea:focus{
+
+    outline:none;
+
+}
+
+
+::selection{
+
+    background:var(--primary);
+
+    color:white;
+
+}
+
+
+
+/* ===================================================
+   SMOOTH HOVER EFFECTS
+=================================================== */
+
+
+.hover-up{
+
+    transition:var(--transition);
+
+}
+
+
+.hover-up:hover{
+
+    transform:translateY(-10px);
+
+}
+
+
+
+/* ===================================================
+   FADE ANIMATIONS
+=================================================== */
+
+
+.fade-left{
+
+    animation:fadeLeft .7s ease;
+
+}
+
+
+.fade-right{
+
+    animation:fadeRight .7s ease;
+
+}
+
+
+@keyframes fadeLeft{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateX(-50px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+}
+
+
+
+@keyframes fadeRight{
+
+
+from{
+
+    opacity:0;
+
+    transform:translateX(50px);
+
+}
+
+
+to{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+}
+
+
+
+/* ===================================================
+   FLOATING ANIMATION
+=================================================== */
+
+
+.float{
+
+    animation:floating 3s infinite ease-in-out;
+
+}
+
+
+@keyframes floating{
+
+
+0%{
+
+    transform:translateY(0);
+
+}
+
+
+50%{
+
+    transform:translateY(-12px);
+
+}
+
+
+100%{
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+/* ===================================================
+   GLASS EFFECT COMPONENT
+=================================================== */
+
+
+.glass{
+
+    background:
+
+    rgba(255,255,255,.15);
+
+    backdrop-filter:
+
+    blur(15px);
+
+    border:
+
+    1px solid rgba(255,255,255,.2);
+
+}
+
+
+
+/* ===================================================
+   DARK MODE READY
+=================================================== */
+
+
+.dark-mode{
+
+    --body-bg:#111827;
+
+    --card-bg:#1f2937;
+
+    --text-color:white;
+
+    --heading-color:white;
+
+}
+
+
+.dark-mode .country-card,
+.dark-mode .tour-card,
+.dark-mode .weather-card,
+.dark-mode .quote-box,
+.dark-mode .contact-form{
+
+    background:#1f2937;
+
+    color:white;
+
+}
+
+
+.dark-mode p{
+
+    color:#d1d5db;
+
+}
+
+
+
+/* ===================================================
+   PRINT SUPPORT
+=================================================== */
+
+@media print{
+
+
+.navbar,
+footer,
+button{
+
+    display:none;
+
+}
+
+
+.page{
+
+    display:block;
+
+}
+
+
+}
