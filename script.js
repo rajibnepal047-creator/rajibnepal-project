@@ -333,7 +333,7 @@ function displayNews(news) {
             <div class="news-card">
 
                 <img
-                    src="${item.urlToImage || `https://picsum.photos/500/300?random=${index}`}"
+                    src="${item.image || `https://picsum.photos/500/300?random=${index}`}"
                     alt="Travel News"
                 >
 
